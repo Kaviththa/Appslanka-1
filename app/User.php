@@ -41,14 +41,8 @@ class User extends Authenticatable
         'approved_at'=>'datetime',
     ];
 
-         //changing the behavior of the attribute
-   // public function setPasswordAttribute($password)
-   // {
-       // $this->attributes['password'] = bcrypt($password);
-   // }
-   //    // just madify the attribute
-   // public function getNameAttribute($name)
-   // {
-      //  return ucfirst($name);
-   // }
+    public function document()
+     {
+         return $this->hasOne(document::class);
+     }
 }
