@@ -13,7 +13,7 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('users_table', function (Blueprint $table) {
+        Schema::create('users', function (Blueprint $table) {
            $table->id();
             $table->string('name');
             $table->string('email')->unique();
@@ -34,7 +34,7 @@ class CreateUsersTable extends Migration
 
         
 
-        Schema::create('roles_table', function (Blueprint $table) {
+        Schema::create('roles', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name')->unique();
             $table->string('slug')->unique();
@@ -42,7 +42,7 @@ class CreateUsersTable extends Migration
 
          });
 
-         Schema::create('permisions_table', function (Blueprint $table){
+         Schema::create('permisions', function (Blueprint $table){
             $table->increments('id');
             $table->string('name')->unique();
             $table->string('slug')->unique();
@@ -51,7 +51,7 @@ class CreateUsersTable extends Migration
             $table->timestamps();
 
          });
-         Schema::create('menu_table', function (Blueprint $table) {
+         Schema::create('menu', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('parent_id')->default(0);
             $table->integer('order')->default(0);
@@ -63,35 +63,35 @@ class CreateUsersTable extends Migration
             $table->timestamps();
         });
 
-        Schema::create('role_users_table', function (Blueprint $table) {
+        Schema::create('role_users', function (Blueprint $table) {
             $table->integer('role_id');
             $table->integer('user_id');
             $table->index(['role_id', 'user_id']);
             $table->timestamps();
         });
 
-        Schema::create('role_permissions_table', function (Blueprint $table) {
+        Schema::create('role_permissions', function (Blueprint $table) {
             $table->integer('role_id');
             $table->integer('permission_id');
             $table->index(['role_id', 'permission_id']);
             $table->timestamps();
         });
 
-        Schema::create('user_permissions_table', function (Blueprint $table) {
+        Schema::create('user_permissions', function (Blueprint $table) {
             $table->integer('user_id');
             $table->integer('permission_id');
             $table->index(['user_id', 'permission_id']);
             $table->timestamps();
         });
 
-        Schema::create('role_menu_table', function (Blueprint $table) {
+        Schema::create('role_menu', function (Blueprint $table) {
             $table->integer('role_id');
             $table->integer('menu_id');
             $table->index(['role_id', 'menu_id']);
             $table->timestamps();
         });
 
-        Schema::create('operation_log_table', function (Blueprint $table) {
+        Schema::create('operation_log', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id');
             $table->string('path');

@@ -13,10 +13,10 @@ class CreateDocumentsTable extends Migration
      */
     public function up()
     {
-        Schema::create('documents_table', function (Blueprint $table) {
+        Schema::create('documents', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users_table');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->string('title')->nullable();
             $table->string('link')->nullable();
             $table->timestamps();
