@@ -71,26 +71,14 @@
                               
                               onfocus="(this.type='date')" onblur="if(this.value)this.type='text' "
                               autofocus>
-                              
-                              
-
-                                @error('date_of_birth')
+                              @error('date_of_birth')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
                             </div>
                         </div>
-
-                        <style>
-                        
-                        
-                            
-                             
-                        
-                        
-                        </style>
-
+                              
                         <div class="col-md-6">
                         <div class="form-group ">
                            
@@ -103,10 +91,7 @@
                                 @enderror
                             </div>
                         </div>
-
-                            
                                
-                        
                         <div class="col-md-12">
                         <div class="form-group">
                              <input id="address" type="text" class="form-control @error('address') is-invalid @enderror" name="address" value="{{ old('address') }}" required autocomplete="address" placeholder="address" autofocus>
@@ -118,7 +103,8 @@
                                 @enderror
                             </div>
                         </div>
-
+                        
+                        
                         <div class="col-md-4">
                         <div class="form-group">
                              <input id="address" type="text" class="form-control @error('address') is-invalid @enderror" name="address" value="{{ old('address') }}" required autocomplete="address" placeholder="country" autofocus>
@@ -130,7 +116,7 @@
                                 @enderror
                             </div>
                         </div>
-
+                        
                         <div class="col-md-4">
                         <div class="form-group">
                              <input id="address" type="text" class="form-control @error('address') is-invalid @enderror" name="address" value="{{ old('address') }}" required autocomplete="address" placeholder="state" autofocus>
@@ -142,7 +128,7 @@
                                 @enderror
                             </div>
                         </div>
-
+                        
                         <div class="col-md-4">
                         <div class="form-group">
                              <input id="address" type="text" class="form-control @error('address') is-invalid @enderror" name="address" value="{{ old('address') }}" required autocomplete="address" placeholder="city" autofocus>
@@ -155,25 +141,6 @@
                             </div>
                         </div>
 
-                            
-                               
-
-                        
-
-
-                       
-
-                           
-                               
-                        
-                            
-
-                        
-
-
-                            
-                                
-          
                         <div class="col-md-6">
                         <div class="form-group ">
                             <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password" placeholder="Password">
@@ -186,16 +153,13 @@
                             </div>
                         </div>
 
-                            
-                                
-
+                        
                         <div class="col-md-6">
                         <div class="form-group">
                              <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password" placeholder="Confirm Password">
                         </div>
-                    </div>
-
-                           
+                        </div>
+                        
                                
                         </div>
                         <div class="form-group row justify-content-center md-0">
@@ -241,3 +205,38 @@ body {
 
 
 </style>
+                            
+                               
+                        
+                       
+
+
+                        
+
+
+                            
+                                
+
+
+                           
+                        
+  
+                               
+
+                        
+
+
+                       
+
+                           
+                               
+                        
+                            
+
+                        
+
+
+                            
+                                
+          
+                        

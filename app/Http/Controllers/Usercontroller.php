@@ -13,6 +13,6 @@ class Usercontroller extends Controller
 
         
         
-           return view('home');
+           return view('user.index');
        }
 }
