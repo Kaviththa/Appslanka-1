@@ -26,14 +26,17 @@ Route::post('/login',function(Request $request){
         'password'=>'required',
     ]);
 
-    $user = User::whereEmail($request->email)->first();
+   auth()->attempt($request->only('email','password'));
+    return auth()->user();
 
-    if (! $user || ! Hash::check($request->password, $user->password)) {
-        return response([
-            'email' => ['The provided credentials are incorrect.'],
-        ], 404);
-    }
+    //$user = User::whereEmail($request->email)->first();
 
-    return $user->createToken('my-token')->plainTextToken;
+    //if (! $user || ! Hash::check($request->password, $user->password)) {
+    //   return response([
+    //      'email' => ['The provided credentials are incorrect.'],
+    //   ], 404);
+ //}
+
+   // return $user->createToken('my-token')->plainTextToken;
 
 });

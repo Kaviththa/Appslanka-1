@@ -18,12 +18,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/user', 'Usercontroller@index')->name('user');
+
 
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/admin','AdminController@index')->name('admin');
-
+Route::get('/user', 'Usercontroller@index')->name('user');
 
